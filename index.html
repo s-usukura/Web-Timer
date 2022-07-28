@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Countdown Timer</title>
+    <script>
+        function generate_url(){
+            let url_timer = new URL('timer.html', document.baseURI);
+            url_timer.searchParams.append('title', document.getElementById('title').value);
+            url_timer.searchParams.append('date', new Date(document.getElementById('date').value).toISOString());
+            let utl_element = document.getElementById('url_timer_link');
+            utl_element.setAttribute('href', url_timer.href);
+            utl_element.innerHTML = url_timer.href;
+        }
+        
+        function set_generate_state(){
+            let date = document.getElementById('date').value;
+            if(date === ""){
+                document.getElementById('generate').disabled = true;
+            }else{
+                document.getElementById('generate').disabled = false;
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script src=darkmode.js></script>
+</head>
+<body>
+    <div class="container">
+        <h1>タイマーの設定</h1>
+        <div>
+            <label for="title">タイトル</label>
+            <input type='text' name='title' id='title'>
+        </div>
+        <div>
+            <label for="title">日付</label>
+            <input type='datetime-local' name='date' id='date' onchange="set_generate_state()">
+        </div>
+        <button type='submit' id="generate" onClick='generate_url()' disabled>generate</button>
+        <div>
+            <a id='url_timer_link'  href="" target="_blank"></a>
+        </div>
+    </div>
+</body>
+</html>

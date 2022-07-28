@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+  <title>Countdown Timer</title>
+  <script>
+    
+    const params = (new URL(document.location)).searchParams;
+    
+    function showCountdown() {
+      let src = new Date();
+      let dst = new Date(params.get('date'));
+      let diff = dst.getTime() - src.getTime();
+      
+      if(diff <=0 ){
+        let redirect_url = new URL('finish.html', document.baseURI);
+        redirect_url.searchParams.append('title', params.get('title'));
+        window.location.href = redirect_url.href;
+      }
+      
+      let day  = Math.floor(diff / 1000 / 60 / 60 / 24);
+      
+      diff -= day * 1000 * 60 * 60 * 24;
+      let hour  = Math.floor(diff / 1000 / 60 / 60);
+      
+      diff -= hour * 1000 * 60 * 60;
+      let min  = Math.floor(diff / 1000 / 60);
+      
+      diff -= min * 1000 * 60;
+      let sec  = Math.floor(diff / 1000);
+      
+      document.getElementById('day').innerHTML = day;
+      document.getElementById('hour').innerHTML = ('00' + hour).slice(-2);
+      document.getElementById('min').innerHTML = ('00' + min).slice(-2);;
+      document.getElementById('sec').innerHTML = ('00' + sec).slice(-2);;
+    }
+    
+    window.onload = function() {
+      let title = params.get('title') === "" ? "イベント" : params.get('title');
+      document.getElementById('title').innerHTML = title + 'まで';
+      showCountdown();
+      setInterval(showCountdown ,1000);
+    }
+    
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+  <script src=darkmode.js></script>
+</head>
+<body>
+  <div class="container">
+    <h1 id='title' class="title-center"></h1>
+    <div class="row">
+      <div class="col">
+        <p class="timer_display">あと</p>
+      </div>
+      <div class="col">
+        <div class="timer_num" id='day'></div>
+        <div class="timer_unit">日</div>
+      </div>
+      <div class="col">
+        <div class="timer_num" id='hour'></div>
+        <div class="timer_unit">時間</div>
+      </div>
+      <div class="col">
+        <div class="timer_num" id='min'></div>
+        <div class="timer_unit">分</div>
+      </div>
+      <div class="col">
+        <div class="timer_num" id='sec'></div>
+        <div class="timer_unit">秒</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
