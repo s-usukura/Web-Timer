@@ -1,4 +1,4 @@
 function addDarkmodeWidget() {
-    new Darkmode().showWidget();
+  new Darkmode().showWidget();
 }
-window.addEventListener('load', addDarkmodeWidget);
+window.addEventListener("load", addDarkmodeWidget);

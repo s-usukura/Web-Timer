@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="style.css" rel="stylesheet">
-  <title>Countdown Timer</title>
-  <script>
-    
-    const params = (new URL(document.location)).searchParams;
-    window.onload = function() {
-      let title = params.get('title') === "" ? "イベント" : params.get('title');
-      document.getElementById('title').innerHTML = title + 'は終了しました。';
-    }
-    
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-  <script src=darkmode.js></script>
-</head>
-<body>
-  <div class="container">
-    <h1 id='title' class="title-center"></h1>
-  </div>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Countdown Timer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script src="darkmode.js"></script>
+    <script>
+      const params = new URL(document.location).searchParams;
+      window.onload = function () {
+        let title =
+          params.get("title") === "" ? "イベント" : params.get("title");
+        document.getElementById("title").innerHTML = title + "は終了しました。";
+      };
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="title" class="text-center"></h1>
+    </div>
+  </body>
 </html>
