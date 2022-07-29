@@ -14,7 +14,7 @@ h1 {
 }
 
 .timer-row {
-  margin: 60px 0;
+  margin: 50px 0 75px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,7 +37,7 @@ h1 {
 }
 
 .text-small {
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .date-row {
@@ -50,9 +50,9 @@ h1 {
   margin: 0 5px;
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 980px) {
   .timer-row {
-    margin: 45px 0;
+    margin: 30px 0 50px 0;
   }
   .date-row {
     flex-direction: column;
@@ -67,13 +67,10 @@ h1 {
     font-size: 2em;
   }
   .timer_num {
-    font-size: 30px;
-  }
-  .text-medium {
-    font-size: 15px;
+    font-size: 40px;
   }
   .text-small {
-    font-size: 11px;
+    font-size: 13px;
   }
   .timer-col {
     margin: 0 10px;
