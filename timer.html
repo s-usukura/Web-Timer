@@ -41,21 +41,21 @@
 
         sec = Math.floor(diff / SEC_MSEC);
 
-        document.getElementById("day").innerHTML = ("00" + day).slice(
+        document.getElementById("day").textContent = ("00" + day).slice(
           -Math.max(2, day.toString().length)
         );
-        document.getElementById("hour").innerHTML = ("00" + hour).slice(-2);
-        document.getElementById("min").innerHTML = ("00" + min).slice(-2);
-        document.getElementById("sec").innerHTML = ("00" + sec).slice(-2);
+        document.getElementById("hour").textContent = ("00" + hour).slice(-2);
+        document.getElementById("min").textContent = ("00" + min).slice(-2);
+        document.getElementById("sec").textContent = ("00" + sec).slice(-2);
 
-        document.getElementById("date-src").innerHTML = src.toString();
+        document.getElementById("date-src").textContent = src.toString();
       }
 
       window.onload = function () {
         let title =
           params.get("title") === "" ? "イベント" : params.get("title");
-        document.getElementById("title").innerHTML = title + "まで";
-        document.getElementById("date-dst").innerHTML = dst.toString();
+        document.getElementById("title").textContent = title + "まで";
+        document.getElementById("date-dst").textContent = dst.toString();
         showCountdown();
         setInterval(showCountdown, 1000);
       };

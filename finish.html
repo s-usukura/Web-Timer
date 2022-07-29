@@ -12,7 +12,7 @@
       window.onload = function () {
         let title =
           params.get("title") === "" ? "イベント" : params.get("title");
-        document.getElementById("title").innerHTML = title + "は終了しました。";
+        document.getElementById("title").textContent = title + "は終了しました。";
       };
     </script>
   </head>
