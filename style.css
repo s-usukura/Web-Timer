@@ -1,12 +1,15 @@
 h1 {
   font-size: 2.8em;
-  margin: 35px 0 10px 0;
+}
+
+.pt {
+  padding-top: 15px;
 }
 
 .container {
   max-width: 960px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 40px 10px;
 }
 
 .text-center {
@@ -14,7 +17,6 @@ h1 {
 }
 
 .timer-row {
-  margin: 50px 0 75px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,28 +40,6 @@ h1 {
 
 .text-small {
   font-size: 18px;
-}
-
-.date-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.date-col {
-  margin: 0 5px;
-}
-
-@media screen and (max-width: 980px) {
-  .timer-row {
-    margin: 30px 0 50px 0;
-  }
-  .date-row {
-    flex-direction: column;
-  }
-  #date-separete {
-    display: none;
-  }
 }
 
 @media screen and (max-width: 600px) {

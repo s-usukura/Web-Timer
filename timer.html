@@ -47,15 +47,13 @@
         document.getElementById("hour").textContent = ("00" + hour).slice(-2);
         document.getElementById("min").textContent = ("00" + min).slice(-2);
         document.getElementById("sec").textContent = ("00" + sec).slice(-2);
-
-        document.getElementById("date-src").textContent = src.toString();
       }
 
       window.onload = function () {
         let title =
           params.get("title") === "" ? "イベント" : params.get("title");
         document.getElementById("title").textContent = title + "まで";
-        document.getElementById("date-dst").textContent = dst.toString();
+        document.getElementById("date-dst").textContent = dst.toLocaleString();
         showCountdown();
         setInterval(showCountdown, 1000);
       };
@@ -63,32 +61,32 @@
   </head>
   <body>
     <div class="container">
-      <h1 id="title" class="text-center"></h1>
-      <div class="timer-row">
-        <div class="timer-col">
-          <div class="text-medium">あと</div>
+      <p class="text-medium text-center">
+        現在時刻&nbsp;〜&nbsp;<span id="date-dst"></span>
+      </p>
+      <div class="pt">
+        <h1 id="title" class="text-center"></h1>
+        <div class="timer-row">
+          <div class="timer-col">
+            <div class="text-medium">あと</div>
+          </div>
+          <div class="timer-col">
+            <div class="timer_num" id="day"></div>
+            <div class="text-medium">日</div>
+          </div>
+          <div class="timer-col">
+            <div class="timer_num" id="hour"></div>
+            <div class="text-medium">時間</div>
+          </div>
+          <div class="timer-col">
+            <div class="timer_num" id="min"></div>
+            <div class="text-medium">分</div>
+          </div>
+          <div class="timer-col">
+            <div class="timer_num" id="sec"></div>
+            <div class="text-medium">秒</div>
+          </div>
         </div>
-        <div class="timer-col">
-          <div class="timer_num" id="day"></div>
-          <div class="text-medium">日</div>
-        </div>
-        <div class="timer-col">
-          <div class="timer_num" id="hour"></div>
-          <div class="text-medium">時間</div>
-        </div>
-        <div class="timer-col">
-          <div class="timer_num" id="min"></div>
-          <div class="text-medium">分</div>
-        </div>
-        <div class="timer-col">
-          <div class="timer_num" id="sec"></div>
-          <div class="text-medium">秒</div>
-        </div>
-      </div>
-      <div class="date-row">
-        <div class="date-col text-small" id="date-src"></div>
-        <div class="date-col text-small" id="date-separete">-</div>
-        <div class="date-col text-small" id="date-dst"></div>
       </div>
     </div>
   </body>
