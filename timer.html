@@ -47,13 +47,15 @@
         document.getElementById("hour").innerHTML = ("00" + hour).slice(-2);
         document.getElementById("min").innerHTML = ("00" + min).slice(-2);
         document.getElementById("sec").innerHTML = ("00" + sec).slice(-2);
+
+        document.getElementById("date-src").innerHTML = src.toString();
       }
 
       window.onload = function () {
         let title =
           params.get("title") === "" ? "イベント" : params.get("title");
         document.getElementById("title").innerHTML = title + "まで";
-        document.getElementById("dst-date").innerHTML = dst.toLocaleString();
+        document.getElementById("date-dst").innerHTML = dst.toString();
         showCountdown();
         setInterval(showCountdown, 1000);
       };
@@ -62,27 +64,31 @@
   <body>
     <div class="container">
       <h1 id="title" class="text-center"></h1>
-      <div id="dst-date" class="text-center text-medium"></div>
-      <div class="row">
-        <div class="col">
+      <div class="timer-row">
+        <div class="timer-col">
           <div class="text-medium">あと</div>
         </div>
-        <div class="col">
+        <div class="timer-col">
           <div class="timer_num" id="day"></div>
           <div class="text-medium">日</div>
         </div>
-        <div class="col">
+        <div class="timer-col">
           <div class="timer_num" id="hour"></div>
           <div class="text-medium">時間</div>
         </div>
-        <div class="col">
+        <div class="timer-col">
           <div class="timer_num" id="min"></div>
           <div class="text-medium">分</div>
         </div>
-        <div class="col">
+        <div class="timer-col">
           <div class="timer_num" id="sec"></div>
           <div class="text-medium">秒</div>
         </div>
+      </div>
+      <div class="date-row">
+        <div class="date-col text-small" id="date-src"></div>
+        <div class="date-col text-small" id="date-separete">-</div>
+        <div class="date-col text-small" id="date-dst"></div>
       </div>
     </div>
   </body>
