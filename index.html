@@ -10,9 +10,9 @@
     <script>
       function validateDate() {
         const tDate = new Date(document.getElementById("date").value); // targetDate -> 対象の日付時刻情報
-        const cDate = new Date(); // -> currentDate -> 現在の日付時刻情報
+        const sDate = new Date(); // -> currentDate -> 現在の日付時刻情報
         
-        if (tDate < cDate) {
+        if (tDate < sDate) {
           // 過去のイベントは登録できないように!!!
           document.getElementById("warningBox").textContent = "過去のイベントは登録できません。";
           document.getElementById("url_timer_link").classList.remove("on");
@@ -24,9 +24,9 @@
       }
       function generate_url() {
         const tDate = new Date(document.getElementById("date").value); // targetDate -> 対象の日付時刻情報
-        const cDate = new Date(); // -> currentDate -> 現在の日付時刻情報
+        const sDate = new Date(); // -> setDate -> 設定時の日付時刻情報
         
-        if (tDate < cDate) {
+        if (tDate < sDate) {
           // 過去のイベントは登録できないように!!!
           document.getElementById("generate").disabled = true;
           return; // ガード節
@@ -41,8 +41,8 @@
           tDate.toISOString()
         );
         url_timer.searchParams.append(
-          "currentDate",
-          `${cDate.getFullYear()}-${cDate.getMonth() + 1}-${cDate.getDay()} ${cDate.getHours()}:${cDate.getMinutes()}:${cDate.getSeconds()}`
+          "setDate",
+          sDate.toISOString()
         );
 
         let utl_element = document.getElementById("url_timer_link");
