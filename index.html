@@ -8,20 +8,45 @@
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script src="darkmode.js"></script>
     <script>
+      function validateDate() {
+        const tDate = new Date(document.getElementById("date").value); // targetDate -> 対象の日付時刻情報
+        const cDate = new Date(); // -> currentDate -> 現在の日付時刻情報
+        
+        if (tDate < cDate) {
+          // 過去のイベントは登録できないように!!!
+          document.getElementById("warningBox").textContent = "過去のイベントは登録できません。";
+          document.getElementById("generate").disabled = true;
+          return; // ガード節
+        }
+        document.getElementById("warningBox").textContent = "";
+        document.getElementById("generate").disabled = false;
+      }
       function generate_url() {
-        let url_timer = new URL("timer.html", document.baseURI);
+        const tDate = new Date(document.getElementById("date").value); // targetDate -> 対象の日付時刻情報
+        const cDate = new Date(); // -> currentDate -> 現在の日付時刻情報
+        
+        if (tDate < cDate) {
+          // 過去のイベントは登録できないように!!!
+          document.getElementById("warningBox").textContent = "過去のイベントは登録できません。";
+          return; // ガード節
+        }
+        const url_timer = new URL("timer.html", document.baseURI);
         url_timer.searchParams.append(
           "title",
           document.getElementById("title").value
         );
         url_timer.searchParams.append(
           "date",
-          new Date(document.getElementById("date").value).toISOString()
+          tDate.toISOString()
+        );
+        url_timer.searchParams.append(
+          "currentDate",
+          `${cDate.getFullYear()}-${cDate.getMonth() + 1}-${cDate.getDay()} ${cDate.getHours()}:${cDate.getMinutes()}:${cDate.getSeconds()}`
         );
 
         let utl_element = document.getElementById("url_timer_link");
         utl_element.setAttribute("href", url_timer.href);
-        utl_element.textContent = url_timer.href;
+        utl_element.textContent = "カウントダウンタイマーへ";
       }
 
       function set_generate_state() {
@@ -37,22 +62,30 @@
   <body>
     <div class="container">
       <h1>タイマーの設定</h1>
-      <div>
-        <label for="title">タイトル</label>
-        <input type="text" name="title" id="title" />
-      </div>
-      <div>
-        <label for="title">日付</label>
-        <input
-          type="datetime-local"
-          name="date"
-          id="date"
-          onchange="set_generate_state()"
-        />
-      </div>
-      <button type="submit" id="generate" onClick="generate_url()" disabled>
-        generate
-      </button>
+      <p id="warningBox"></p>
+      <table>
+        <tbody>
+          <tr>
+            <th><label for="title">タイトル</label></th>
+            <td><input type="text" name="title" id="title" /></td>
+          </tr>
+          <tr>
+            <th><label for="title">日付</label></th>
+            <td>
+              <input
+              type="datetime-local"
+              name="date"
+              id="date"
+              onchange="set_generate_state()"
+              oninput="validateDate()"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th colspan="2"><button type="submit" id="generate" onClick="generate_url()" disabled>generate</button></th>
+          </tr>
+        </tbody>
+      </table>
       <div>
         <a id="url_timer_link" href="" target="_blank"></a>
       </div>

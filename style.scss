@@ -56,6 +56,7 @@ h1 {
     margin: 0 10px;
   }
 }
+
 #url_timer_link {
   margin: 25px 0;
   width: 250px;
@@ -65,10 +66,10 @@ h1 {
   align-items: center;
   border: 1px black solid;
   background-color: aliceblue;
-}
-#url_timer_link:hover {
-  background-color: azure;
-}
-#url_timer_link:not(.on) {
-  display: none;
+  &:hover {
+    background-color: azure;
+  }
+  &:not(.on) {
+    display: none;
+  }
 }
