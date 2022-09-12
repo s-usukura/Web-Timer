@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="600" height="400" version="1.1" viewBox="0 0 600 400" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<filter id="filter5878" x="-.035719" y="-.052848" width="1.0716" height="1.108" color-interpolation-filters="sRGB">
+	<feGaussianBlur stdDeviation="4.2546283"/>
+</filter>
+<filter id="filter6677" x="-.13673" y="-.27115" width="1.2735" height="1.5423" color-interpolation-filters="sRGB">
+	<feGaussianBlur stdDeviation="4.512902"/>
+</filter>
+<path d="m75.828 353.41c52.006-231.95 396.94-4.2312 422.47-205.14" fill="none" filter="url(#filter5878)" opacity=".94311" stroke="#fcf1a0" stroke-width="10"/>
+<g fill="#ad7300">
+<rect x="491.86" y="73.119" width="15.572" height="75.151" opacity=".94311"/><rect x="436.01" y="27.081" width="127.28" height="79.89" opacity=".94311" stroke-width=".71536"/>
+</g><text x="447.5184" y="79.212791" fill="#ffffff" font-size="37.333px" opacity=".94311" xml:space="preserve">
+<tspan x="447.5184" y="79.212791">GOAL</tspan></text><ellipse cx="72.781" cy="359.17" rx="39.606" ry="19.972" fill="#ffbd00" filter="url(#filter6677)" opacity=".94311"/>
+<image transform="scale(-1,1)" x="-131.96" y="328.39" width="100" height="56.745" xlink:href="img/turtle.png" preserveAspectRatio="none"/><text x="35.882717" y="64.318077" fill="#000000" font-size="37.333px" opacity=".94311" stroke-width="10" xml:space="preserve">
+<tspan x="35.882717" y="64.318077">0%</tspan></text>
+</svg>

@@ -89,5 +89,68 @@
         </div>
       </div>
     </div>
+    <div id="roadMap">
+      <svg id="roadMapImg" version="1.1" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+        <filter id="misty" x="-.035719" y="-.052848" width="1.0716" height="1.108" color-interpolation-filters="sRGB">
+          <feGaussianBlur stdDeviation="4.2546283"/>
+        </filter>
+        <filter id="boardMist" x="-.13673" y="-.27115" width="1.2735" height="1.5423" color-interpolation-filters="sRGB">
+          <feGaussianBlur stdDeviation="4.512902"/>
+        </filter>
+        <path d="m75.828 353.41c52.006-231.95 396.94-4.2312 422.47-205.14" fill="none" filter="url(#misty)" opacity=".95" stroke="#fcf1a0" stroke-width="10"/>
+        <g fill="#ad7300">
+        <rect x="490" y="75" width="15" height="75.151" opacity=".95"/><rect x="435" y="27" width="127" height="80" opacity=".95" stroke-width=".7"/>
+        </g>
+        <text x="450" y="80" fill="#ffffff" font-size="37px" opacity=".95" xml:space="preserve">
+        <tspan x="460.5184" y="80">GOAL</tspan></text><ellipse cx="72.781" cy="360" rx="40" ry="20" fill="#ffbd00" filter="url(#boardMist)" opacity=".95"/>
+        <image id="MRturtle" transform="scale(-1,1)" x="-132" y="328" width="100" height="56" xlink:href="img/turtle.png" preserveAspectRatio="none"/><text x="35" y="64" fill="#000000" font-size="37.333px" opacity=".94311" stroke-width="10" xml:space="preserve">
+        <tspan x="35" y="64">0%</tspan></text>
+        </svg>
+    </div>
+    <script type="text/javascript" charset="utf-8">
+      "use strict";
+      // ベジェ曲線を活用してカメに歩いてもらう
+      // 使用するベジェ曲線は「cubic-bezier(0, 1, 1, 0)」
+      // 起点は「-132,328」、終点は「-550,123」
+
+      // 必要な関数群
+      // 関数型言語出身者の書き方してゴメン、、、泣
+      const eq = (a, b) => a === b;
+      const ne = (a, b) => a !== b;
+      const gt = (a, b) => a > b;
+      const gtEq = (a, b) => a >= b;
+      const lt = (a, b) => a < b;
+      const ltEq = (a, b) => a <= b;
+      const doNtimes = (n, fx, i = 0) => (i < n) ? [fx(i), ...doNtimes(n, fx, i + 1)] : [];
+      const looper = ([a, ...b], fx, i = 0) => (a !== undefined) ? [fx(a, i), ...looper(b, fx, i + 1)] : [];
+      const fromAtoB = (a, b, step = 1, eq = true, i = 0) => (((eq) ? ltEq : lt)(a + i, b)) ? [a + i, ...fromAtoB(a, b, step, eq, i + step)] : [];
+
+      // ベジェ曲線算出用関数
+      // 引数
+      //  第一 -> ベジェ制御点
+      //  第二 -> 割合 (0 -> 1)
+      //  第三 -> 結果保存用配列
+      function recursiveMain(points, proportion, result) {
+        if (points.length === 1) return;
+        const dComponents = [];
+        doNtimes(points.length - 1, i => {
+          const x = (points[i + 1][0] - points[i][0]) * proportion + points[i][0];
+          const y = (points[i + 1][1] - points[i][1]) * proportion + points[i][1];
+          dComponents.push([x, y]);
+        });
+        if (points.length === 2) {
+          result[0] = dComponents[0][0];
+          result[1] = dComponents[0][1];
+        }
+        recursiveMain(dComponents, proportion, result);
+      }
+      // 「0.0」から「1.0」までを「0.1」刻みで実行
+      const result = looper(fromAtoB(0, 1, 0.1), i => {
+        const answer = [];
+        recursiveMain([[0, 0], [0, 1], [1, 0], [1, 1]], i, answer);
+        return answer;
+      });
+      console.log(result);
+    </script>
   </body>
 </html>

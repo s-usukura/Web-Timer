@@ -15,6 +15,7 @@
         if (tDate < cDate) {
           // 過去のイベントは登録できないように!!!
           document.getElementById("warningBox").textContent = "過去のイベントは登録できません。";
+          document.getElementById("url_timer_link").classList.remove("on");
           document.getElementById("generate").disabled = true;
           return; // ガード節
         }
@@ -27,7 +28,7 @@
         
         if (tDate < cDate) {
           // 過去のイベントは登録できないように!!!
-          document.getElementById("warningBox").textContent = "過去のイベントは登録できません。";
+          document.getElementById("generate").disabled = true;
           return; // ガード節
         }
         const url_timer = new URL("timer.html", document.baseURI);
@@ -47,6 +48,7 @@
         let utl_element = document.getElementById("url_timer_link");
         utl_element.setAttribute("href", url_timer.href);
         utl_element.textContent = "カウントダウンタイマーへ";
+        document.getElementById("url_timer_link").classList.add("on");
       }
 
       function set_generate_state() {
