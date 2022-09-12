@@ -104,7 +104,7 @@
         <text x="450" y="80" fill="#ffffff" font-size="37px" opacity=".95" xml:space="preserve">
         <tspan x="460.5184" y="80">GOAL</tspan></text><ellipse cx="72.781" cy="360" rx="40" ry="20" fill="#ffbd00" filter="url(#boardMist)" opacity=".95"/>
         <image id="MRturtle" transform="scale(-1,1)" x="-132" y="328" width="100" height="56" xlink:href="img/turtle.png" preserveAspectRatio="none"/><text x="35" y="64" fill="#000000" font-size="37.333px" opacity=".94311" stroke-width="10" xml:space="preserve">
-        <tspan x="35" y="64">0%</tspan></text>
+        <tspan id="milestoneText" x="35" y="64">0%</tspan></text>
         </svg>
     </div>
     <script type="text/javascript" charset="utf-8">
@@ -150,20 +150,20 @@
         recursiveMain([[0, 0], [0, 1], [1, 0], [1, 1]], i, answer);
         return answer;
       });
-      console.log(params.get("setDate"));
       const tDate = new Date(params.get("date")); // targetDate -> 対象の日付時刻情報
       const sDate = new Date(params.get("setDate")); // setDate -> 設定した日付時刻情報
       const cDate = new Date(); // currentDate -> 現在の日付時刻情報
-      const entireTimeSpan = tDate - cDate;
+      const entireTimeSpan = tDate - sDate;
       const finishedTimeSpan = cDate - sDate;
-      const proportion = Math.ceil(finishedTimeSpan / entireTimeSpan);
-      console.log(proportion);
+      const proportion = Math.ceil(finishedTimeSpan / entireTimeSpan * 10) / 10;
+      document.getElementById("milestoneText").textContent = `${proportion * 100}%`;
       const tPoints = result[proportion];
       const MRturtle = document.getElementById("MRturtle");
       const [sx, sy, fx, fy] = [-132, 328, -550, 123];
       const [dx, dy] = [fx - sx, fy - sy];
-      MRturtle.setAttribute("x", sx - dx * 0.1);
-      MRturtle.setAttribute("y", sy + dy * 0.1);
+      console.log(proportion);
+      MRturtle.setAttribute("x", sx + dx * proportion);
+      MRturtle.setAttribute("y", sy + dy * proportion);
     </script>
   </body>
 </html>
