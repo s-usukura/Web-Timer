@@ -1,17 +1,125 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
-<svg width="600" height="400" version="1.1" viewBox="0 0 600 400" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<filter id="filter5878" x="-.035719" y="-.052848" width="1.0716" height="1.108" color-interpolation-filters="sRGB">
-	<feGaussianBlur stdDeviation="4.2546283"/>
+
+<svg
+   width="600"
+   height="400"
+   version="1.1"
+   viewBox="0 0 600 400"
+   xml:space="preserve"
+   id="svg28"
+   sodipodi:docname="roadMap.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs32" /><sodipodi:namedview
+   id="namedview30"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   showgrid="false"
+   inkscape:zoom="1.03625"
+   inkscape:cx="327.62364"
+   inkscape:cy="187.21351"
+   inkscape:window-width="1920"
+   inkscape:window-height="1009"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg28" />
+<filter
+   id="filter5878"
+   x="-0.035718461"
+   y="-0.052848796"
+   width="1.0716292"
+   height="1.1079575"
+   color-interpolation-filters="sRGB">
+	<feGaussianBlur
+   stdDeviation="4.2546283"
+   id="feGaussianBlur2" />
 </filter>
-<filter id="filter6677" x="-.13673" y="-.27115" width="1.2735" height="1.5423" color-interpolation-filters="sRGB">
-	<feGaussianBlur stdDeviation="4.512902"/>
+<filter
+   id="filter6677"
+   x="-0.13673389"
+   y="-0.27115372"
+   width="1.2734678"
+   height="1.5423074"
+   color-interpolation-filters="sRGB">
+	<feGaussianBlur
+   stdDeviation="4.512902"
+   id="feGaussianBlur5" />
 </filter>
-<path d="m75.828 353.41c52.006-231.95 396.94-4.2312 422.47-205.14" fill="none" filter="url(#filter5878)" opacity=".94311" stroke="#fcf1a0" stroke-width="10"/>
-<g fill="#ad7300">
-<rect x="491.86" y="73.119" width="15.572" height="75.151" opacity=".94311"/><rect x="436.01" y="27.081" width="127.28" height="79.89" opacity=".94311" stroke-width=".71536"/>
-</g><text x="447.5184" y="79.212791" fill="#ffffff" font-size="37.333px" opacity=".94311" xml:space="preserve">
-<tspan x="447.5184" y="79.212791">GOAL</tspan></text><ellipse cx="72.781" cy="359.17" rx="39.606" ry="19.972" fill="#ffbd00" filter="url(#filter6677)" opacity=".94311"/>
-<image transform="scale(-1,1)" x="-131.96" y="328.39" width="100" height="56.745" xlink:href="img/turtle.png" preserveAspectRatio="none"/><text x="35.882717" y="64.318077" fill="#000000" font-size="37.333px" opacity=".94311" stroke-width="10" xml:space="preserve">
-<tspan x="35.882717" y="64.318077">0%</tspan></text>
+<path
+   d="m75.828 353.41c52.006-231.95 396.94-4.2312 422.47-205.14"
+   fill="none"
+   filter="url(#filter5878)"
+   opacity=".94311"
+   stroke="#fcf1a0"
+   stroke-width="10"
+   id="path8" />
+<g
+   fill="#ad7300"
+   id="g14">
+<rect
+   x="491.86"
+   y="73.119"
+   width="15.572"
+   height="75.151"
+   opacity=".94311"
+   id="rect10" /><rect
+   x="436.01"
+   y="27.081"
+   width="127.28"
+   height="79.89"
+   opacity=".94311"
+   stroke-width=".71536"
+   id="rect12" />
+</g><text
+   x="447.5184"
+   y="79.212791"
+   fill="#ffffff"
+   font-size="37.333px"
+   opacity=".94311"
+   xml:space="preserve"
+   id="text18">
+<tspan
+   x="447.5184"
+   y="79.212791"
+   id="tspan16">GOAL</tspan></text><ellipse
+   cx="72.781"
+   cy="359.17"
+   rx="39.606"
+   ry="19.972"
+   fill="#ffbd00"
+   filter="url(#filter6677)"
+   opacity=".94311"
+   id="ellipse20" />
+<image
+   transform="scale(-1,1)"
+   x="-133.89006"
+   y="328.39001"
+   width="99.999153"
+   height="56.744999"
+   xlink:href="turtle.png"
+   preserveAspectRatio="none"
+   id="image22" /><text
+   x="35.882717"
+   y="64.318077"
+   fill="#000000"
+   font-size="37.333px"
+   opacity=".94311"
+   stroke-width="10"
+   xml:space="preserve"
+   id="text26">
+<tspan
+   x="35.882717"
+   y="64.318077"
+   id="tspan24">0%</tspan></text>
 </svg>
