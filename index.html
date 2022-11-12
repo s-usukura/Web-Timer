@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>Countdown Timer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="favicon" href="favicon.ico" />
     <link href="style.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script src="darkmode.js"></script>
@@ -11,7 +12,7 @@
       function validateDate() {
         const tDate = new Date(document.getElementById("date").value); // targetDate -> 対象の日付時刻情報
         const sDate = new Date(); // -> currentDate -> 現在の日付時刻情報
-        
+
         if (tDate < sDate) {
           // 過去のイベントは登録できないように!!!
           document.getElementById("warningBox").textContent = "過去のイベントは登録できません。";
@@ -25,7 +26,7 @@
       function generate_url() {
         const tDate = new Date(document.getElementById("date").value); // targetDate -> 対象の日付時刻情報
         const sDate = new Date(); // -> setDate -> 設定時の日付時刻情報
-        
+
         if (tDate < sDate) {
           // 過去のイベントは登録できないように!!!
           document.getElementById("generate").disabled = true;
