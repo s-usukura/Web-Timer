@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "github.copilot",
+        "mhutchie.git-graph",
+        "eamodio.gitlens",
+        "davidanson.vscode-markdownlint",
+        "xabikos.javascriptsnippets",
+        "glenn2223.live-sass",
+        "dbaeumer.vscode-eslint"
+    ]
+}
